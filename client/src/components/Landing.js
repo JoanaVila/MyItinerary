@@ -1,36 +1,31 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
-import {Navbar, NavItem, DropdownButton}  from "react-bootstrap";
 import Navigation from './Navigation';
+import { Carousel, CarouselItem, Image} from 'react-bootstrap';
+import { connect } from "react-redux";
+import Cities from "./Cities";
+import { fetchCities} from "../store/actions/cityActions";
+import CarouselCaption from 'react-bootstrap/CarouselCaption';
 
+class Landing extends Component {
 
- export default class Landing extends Component {
+    componentDidMount() {
+        this.props.fetchCities()
+    }
     
     render() {
+        let cityArray = this.props.cities.map(element => {
+            return element.img
+        })
+
+        let cityName = this.props.cities.map(element => {
+            return element.name
+        })
+
         return (
             <div>
                 <div>
                     <Navigation/>
-                {/* <Navbar bg="light" variant="light">
-                    <div className= "navBar">
-                    <Navbar.Brand href="#profileIcon">
-                    <img
-                        alt=""
-                        src="./images/profile_icon.png"
-                        width="40"
-                        height="40"
-                        className="profile_icon"
-                    />{' '}
-                    </Navbar.Brand>
-                    <img
-                        alt=""
-                        src="./images/menu_icon.png"
-                        width="40"
-                        height="40"
-                        className="menu_icon"
-                    />{' '} 
-                    </div> 
-                </Navbar> */}
                 </div>   
                 <div className = "Home-page">
                     <img src="./images/MYtineraryLogo.png" className="App-logo" alt="logo" ></img>
@@ -48,8 +43,136 @@ import Navigation from './Navigation';
                 </div>
 
                 </div>
+                <div>
+
+                <Carousel>
+                    <CarouselItem>
+                    <div style= {{display: "flex"}}>  
+                    <div
+                            className="d-block w-50"
+                            style={{backgroundImage:`url(${cityArray[0]})`, backgroundSize: "cover"}} 
+                        >
+                            <h6 style = {{backgroundColor: "black", color: "white", alignItems: "center"}}>{cityName[0]}</h6>
+                    </div>
+                    <div
+                            className="d-block w-50"
+                            style={{backgroundImage:`url(${cityArray[1]})`, backgroundSize: "cover"}} 
+                        >
+                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[1]}</h6>
+                    </div>
+                    </div>
+                    <div style= {{display: "flex"}}>
+                    <div
+                            className="d-block w-50"
+                            style={{backgroundImage:`url(${cityArray[2]})`, backgroundSize: "cover"}} 
+                        >
+                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[2]}</h6>
+                    </div>
+                    <div
+                            className="d-block w-50"
+                            style={{backgroundImage:`url(${cityArray[3]})`, backgroundSize: "cover"}} 
+                        >
+                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[3]}</h6>
+                    </div>
+                    </div>
+                    </CarouselItem>
+                    <CarouselItem>
+                    <div style= {{display: "flex"}}>
+                    <div
+                            className="d-block w-50"
+                            style={{backgroundImage:`url(${cityArray[4]})`, backgroundSize: "cover"}} 
+                        >
+                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[4]}</h6>
+                    </div>
+                    <div
+                            className="d-block w-50"
+                            style={{backgroundImage:`url(${cityArray[5]})`, backgroundSize: "cover"}} 
+                        >
+                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[5]}</h6>
+                    </div>
+                    </div>
+                    <div style= {{display: "flex"}}>
+                    <div
+                            className="d-block w-50"
+                            style={{backgroundImage:`url(${cityArray[6]})`, backgroundSize: "cover"}} 
+                        >
+                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[6]}</h6>
+                    </div>
+                    <div
+                            className="d-block w-50"
+                            style={{backgroundImage:`url(${cityArray[7]})`, backgroundSize: "cover"}} 
+                        >
+                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[7]}</h6>
+                    </div>
+                    </div>
+                    </CarouselItem>
+                    <CarouselItem>
+                    <div style= {{display: "flex"}}>
+                    <div
+                            className="d-block w-50"
+                            style={{backgroundImage:`url(${cityArray[8]})`, backgroundSize: "cover"}} 
+                        >
+                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[8]}</h6>
+                    </div>
+                    <div
+                            className="d-block w-50"
+                            style={{backgroundImage:`url(${cityArray[9]})`, backgroundSize: "cover"}} 
+                        >
+                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[9]}</h6>
+                    </div>
+                    </div>
+                    <div style= {{display: "flex"}}>
+                    <div
+                            className="d-block w-50"
+                            style={{backgroundImage:`url(${cityArray[10]})`, backgroundSize: "cover"}} 
+                        >
+                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[10]}</h6>
+                    </div>
+                    <div
+                            className="d-block w-50"
+                            style={{backgroundImage:`url(${cityArray[11]})`, backgroundSize: "cover"}} 
+                        >
+                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[11]}</h6>
+                    </div>
+                    </div>
+                    </CarouselItem>
+                    <CarouselItem>
+                    <div style= {{display: "flex"}}>
+                    <div
+                            className="d-block w-50"
+                            style={{backgroundImage:`url(${cityArray[12]})`, backgroundSize: "cover"}} 
+                        >
+                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[12]}</h6>
+                    </div>
+                    <div
+                            className="d-block w-50"
+                            style={{backgroundImage:`url(${cityArray[13]})`, backgroundSize: "cover"}} 
+                        >
+                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[13]}</h6>
+                        </div>
+                    </div>
+                    <div style= {{display: "flex"}}>
+                    <div
+                            className="d-block w-50"
+                            style={{backgroundImage:`url(${cityArray[14]})`, backgroundSize: "cover"}} 
+                        >
+                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[14]}</h6>
+                        </div>
+                    </div>
+                    </CarouselItem>
+                </Carousel>
                 </div>
+
+
+            </div>
         )
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        cities: state.cities.cities
+    }
+}
+
+export default connect(mapStateToProps, {fetchCities})(Landing)

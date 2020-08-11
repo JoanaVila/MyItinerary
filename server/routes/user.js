@@ -42,7 +42,6 @@ router.post("/login", async (req, res) => {
         email,
         password
     } = req.body
-    console.log(req.body)
     try {
         let loginUser = await userSchema.findOne({email: req.body.email})
         if (!loginUser) {
@@ -50,31 +49,34 @@ router.post("/login", async (req, res) => {
             process.exit(1)
         }
         let passwordMatch = await bcrypt.compare(password, loginUser.password);
-        if (passwordMatch) {
-            const payload = {
-                id: loginUser.id,
-                email: loginUser.email
-            };
-            const options = {expiresIn: 2592000};
-            jwt.sign(
-                payload,
-                key.secretOrKey,
-                options,
-                (err, token) => {
-                    if(err){
-                        res.json({
-                            success: false,
-                            token: "There was an error"
-                        });
-                    }else {
-                        res.json({
-                            success: true,
-                            token: token
-                        });
-                    }
-                }
-            );
+        console.log(req.body)
+        if (!passwordMatch) {
+            res.status(400).json({errors: "Invalid credentials"})
         }
+        const payload = {
+            id: loginUser.id,
+            email: loginUser.email
+        };
+        console.log(payload)
+        const options = {expiresIn: 2592000};
+        jwt.sign(
+            payload,
+            key.secretOrKey,
+            options,
+            (err, token) => {
+                if(err){
+                    res.json({
+                        success: false,
+                        token: "There was an error"
+                    });
+                }else {
+                    res.json({
+                        success: true,
+                        token: token
+                    });
+                }
+            }
+        );
     } catch (error) {
         res.status(500).send(error.message)
         process.exit(1)
@@ -140,15 +142,17 @@ router.post(
     async (req, res) => {
     let user = await userSchema.findById({ _id: req.user.id })
     if (!user) {
+        console.log(user)
         res.status(404).json({ error: "User does not exist" })
     } 
     await itinerarySchema.findOne({ _id: req.params.id })
     .then(itinerary => {
+     console.log(itinerary)
         if (!itinerary) {
             res.status(404).json({ error: "Itinerary not found" })
         } 
-        let result = user.favourites.filter(itn => itn._id = itinerary.itineraryID )
-        console.log(result.length)
+        let result = user.favourites.filter(itn => itn.itineraryID === itinerary._id)
+        console.log(result)
         if (result.length !== 0) {
             res.status(404).json({error: "Itinerary already added"})
         } else {
@@ -168,10 +172,12 @@ router.post(
     passport.authenticate("jwt", { session: false }),
     async (req, res) => {
     let user = await userSchema.findById({ _id: req.user.id })
+        console.log(req.user)
         if (!user) {
             res.status(404).json({ error: "User does not exist" })
         }
     let result = user.favourites.map(itn => itn.itineraryID ).indexOf(req.params.id)
+        console.log(result)
         if (result === -1) {
             res.status(404).json({ error: "Itinerary is not on favourites" })
         }

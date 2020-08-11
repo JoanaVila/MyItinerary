@@ -1,4 +1,4 @@
-import { FETCH_CITIES, NEW_CITY} from "../actions/types"
+import { FETCH_CITIES, ONE_CITY} from "../actions/types"
 
 const initialState = {
     cities: [],
@@ -13,6 +13,12 @@ export default function(state = initialState, action) {
                 ...state,
                 cities: action.payload
             };
+        case ONE_CITY:
+            return {
+                ...state,
+                city: action.payload
+            }
+        
         default:
             return state;
     }

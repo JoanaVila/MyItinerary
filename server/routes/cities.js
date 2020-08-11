@@ -39,14 +39,17 @@ router.post(
     }
 );
 
-router.get('/:name',
+router.get('/:id',
 	(req, res) => {
-  		let cityRequested = req.params.name;
-  		citiesSchema.findOne({ name: cityRequested })
+        
+  		let cityRequested = req.params.id;
+  		citiesSchema.findById({_id: cityRequested })
 			.then(city => {
 				res.send(city)
 			})
 			.catch(err => console.log(err));
 });
+
+
 
 module.exports = router

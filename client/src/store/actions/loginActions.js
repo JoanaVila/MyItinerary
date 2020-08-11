@@ -1,5 +1,5 @@
 import axios from "axios";
-import { LOGIN_SUCCESS, USER_LOADER, SET_CURRENT_USER} from "../actions/types";
+import { LOGIN_SUCCESS, USER_LOADER, SET_CURRENT_USER, LOGOUT_SUCCESS} from "../actions/types";
 import jwt_decode from "jwt-decode";
 
 export const login = (body) => async dispatch => {
@@ -57,3 +57,10 @@ export const authGoogle = token => {
       payload: decoded
     };
   };
+
+  export const logout = () => dispatch => {
+    dispatch({
+      Type: LOGOUT_SUCCESS,
+    })
+  };
+        

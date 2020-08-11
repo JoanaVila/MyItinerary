@@ -22,6 +22,7 @@ app.use("/cities", require("./routes/cities"))
 app.use("/itineraries", require("./routes/itineraries"))
 app.use("/activities", require("./routes/activities"))
 app.use("/users", require("./routes/user"))
+app.use("/comments", require("./routes/comments"))
 
 
 

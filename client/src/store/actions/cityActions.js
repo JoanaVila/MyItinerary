@@ -1,4 +1,4 @@
-import { FETCH_CITIES, NEW_CITY } from "./types"
+import { FETCH_CITIES, ONE_CITY } from "./types"
 
 export const fetchCities = () => dispatch => {
     console.log("fetching") 
@@ -11,3 +11,14 @@ export const fetchCities = () => dispatch => {
             payload: cities
         })});
     }
+
+export const getOneCity = (id) => dispatch => {
+    fetch("http://localhost:5000/cities/" + id)
+    .then (res => res.json())
+    .then(city => {
+        dispatch({
+            type: ONE_CITY,
+            payload: city,
+        })
+    })
+}

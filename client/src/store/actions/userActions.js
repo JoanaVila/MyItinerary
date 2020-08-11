@@ -1,5 +1,5 @@
 import axios from "axios"
-import { REGISTER_SUCCESS } from "./types"
+import { REGISTER_SUCCESS, FAVOURITE_SUCCESS, FETCH_FAVOURITES, FAVOURITE_REMOVE } from "./types"
 
 export const addUser = (body) => async dispatch => {
     console.log(body)
@@ -22,10 +22,74 @@ export const addUser = (body) => async dispatch => {
     
 }
 
-export const togglerFavAction = (itinerary) => async dispatch => {
-    console.log(itinerary)
+/* export const addFavourites= (id) => async dispatch => {
+    console.log(id)
     const config = {
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization" : `bearer ${localStorage.token}`
+        }}
+        try {
+        console.log(config)
+        const res = await axios.post(`http://localhost:5000/users/addFavourites/${id}`, config)
+        
+         dispatch({
+            type: FAVOURITE_SUCCESS,
+            payload: res.data
+        }) 
+}       catch (error) {
+        console.log(error.message)
+    
+}}  */
+
+export const addFavourites = id => dispatch => {
+  //const body = JSON.stringify(favItinerary)
+        fetch("http://localhost:5000/users/addFavourites/"+id, {
+          method: "POST",
+          headers: {"Content-type": "Application/JSON", "Authorization": `bearer ${localStorage.token}`},
+        
+        })
+        .then(response => response.json())
+        .then(res =>  {
+        console.log(res)
+           dispatch({
+            type: FAVOURITE_SUCCESS,
+            payload: res
+          });
+        })
+        .catch(err => console.log(err));
+    }; 
+
+export const fetchFavourites = (id) => dispatch => {
+        console.log(id) 
+            fetch("http://localhost:5000/users/favourites",{
+                method: "GET",
+                headers: {"Content-type": "Application/JSON", "Authorization": `bearer ${localStorage.token}`},
+              })
+            .then(res => res.json())
+            .then(res => {
+                console.log(res)
+                dispatch({
+                type: FETCH_FAVOURITES,
+                payload: res
+            })});
         }
-}}
+
+export const removeFavourites = id => dispatch => {
+    //const body = JSON.stringify(favItinerary)
+            fetch("http://localhost:5000/users/removeFavourites/"+id, {
+            method: "POST",
+            headers: {"Content-type": "Application/JSON", "Authorization": `bearer ${localStorage.token}`},
+            
+            })
+            .then(response => response.json())
+            .then(res =>  {
+            console.log(res)
+                dispatch({
+                type: FAVOURITE_REMOVE,
+                payload: res
+            });
+            })
+            .catch(err => console.log(err));
+        };
+  

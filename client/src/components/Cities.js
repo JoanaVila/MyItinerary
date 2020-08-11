@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import {Link} from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchCities } from "../store/actions/cityActions";
-import {Navbar, Form, FormControl} from "react-bootstrap";
+import { Form, FormControl} from "react-bootstrap";
 import {authGoogle} from "../store/actions/loginActions";
+import Navigation from './Navigation';
 
 class Cities extends Component {
 
@@ -60,33 +61,21 @@ class Cities extends Component {
                     </Link>
                     )       
         })
+
+        
             return (
             <div>
-                <Navbar bg="light" variant="light">
-                    <div className= "navBar">
-                    <Navbar.Brand href="#profileIcon">
-                    <img
-                        alt=""
-                        src="./images/profile_icon.png"
-                        width="40"
-                        height="40"
-                        className="profile_icon"
-                    />{' '}
-                    </Navbar.Brand>
-                    <img
-                        alt=""
-                        src="./images/menu_icon.png"
-                        width="40"
-                        height="40"
-                        className="menu_icon"
-                    />{' '} 
-                    </div> 
-                </Navbar>
+                <Navigation/>
                 <p className= "filterParagraph">Filter our current cities</p>
-                <Form inline>
+                <Form inline style={{marginBottom: 15}}>
                     <FormControl id = "mySearch" type="text" placeholder="Search" className="mr-sm-2" onChange = {this.handleChange}/>
                 </Form>
+                <div style={{width: 375, height: 495, overflow: "scroll"}}>
                 {citiesPost}
+                </div>
+                <div className="Footer" style={{width:200, marginLeft: 10}}>
+                <Link to= {{pathname: "/"}}><img src="./images/homeIcon.png"  alt="icon" width="30" height="30" style={{float:"right"}}></img></Link>
+                </div>
             </div>
             )}};
 

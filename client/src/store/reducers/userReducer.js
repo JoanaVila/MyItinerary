@@ -1,17 +1,32 @@
-import { REGISTER_SUCCESS} from "../actions/types"
+import { REGISTER_SUCCESS, FETCH_FAVOURITES, FAVOURITE_SUCCESS, FAVOURITE_REMOVE} from "../actions/types"
 
 const initialState = {
-    user: {}
+    favouritesItn:[]
 }
    
 export default function(state = initialState, action) {
     switch(action.type) {
         case REGISTER_SUCCESS:
-            localStorage.setItem('token', payload.token)
+            localStorage.setItem('token', action.payload.token)
             console.log("reducer"); 
             return {
                 ...state,
-                user: action.payload
+                
+            };
+        case FETCH_FAVOURITES:
+            return {
+                ...state,
+                favouritesItn: action.payload
+            };
+        case FAVOURITE_SUCCESS:
+            return {
+                ...state,
+                favouritesItn: action.payload
+            };
+        case FAVOURITE_REMOVE:
+            return {
+                ...state,
+                favouritesItn: action.payload
             };
         default:
             return state;

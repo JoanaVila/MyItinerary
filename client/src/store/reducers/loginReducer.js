@@ -1,4 +1,4 @@
-import {LOGIN_SUCCESS, USER_LOADER, SET_CURRENT_USER} from "../actions/types"
+import {LOGIN_SUCCESS, USER_LOADER, SET_CURRENT_USER, LOGOUT_SUCCESS} from "../actions/types"
 
 const initialState = {
     auth: {},
@@ -24,7 +24,13 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 user: action.payload
-            }    
+            };
+        case LOGOUT_SUCCESS:
+            localStorage.removeItem("token")
+            return {
+                ...state,
+            };
+
 
         default:
             return state;

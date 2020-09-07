@@ -16,3 +16,4 @@ export const COMMENT_SUCCESS = "COMMENT_SUCCESS";
 export const COMMENT_DELETE = "COMMENT_DELETE";
 export const COMMENT_UPDATE = "COMMENT_UPDATE";
 export const ONE_CITY = "ONE_CITY";
+export const LOGOUT = "LOGOUT";

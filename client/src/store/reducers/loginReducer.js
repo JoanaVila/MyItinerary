@@ -1,4 +1,4 @@
-import {LOGIN_SUCCESS, USER_LOADER, SET_CURRENT_USER, LOGOUT_SUCCESS} from "../actions/types"
+import {LOGIN_SUCCESS, USER_LOADER, SET_CURRENT_USER, LOGOUT} from "../actions/types"
 
 const initialState = {
     auth: {},
@@ -10,7 +10,7 @@ export default function(state = initialState, action) {
     switch(action.type) {
         case LOGIN_SUCCESS:
             localStorage.setItem('token', action.payload.token)
-            console.log("reducer"); 
+            console.log("reducer");
             return {
                 ...state,
                 auth: action.payload
@@ -25,11 +25,12 @@ export default function(state = initialState, action) {
                 ...state,
                 user: action.payload
             };
-        case LOGOUT_SUCCESS:
+        case LOGOUT:
             localStorage.removeItem("token")
             return {
-                ...state,
+                ...state
             };
+        
 
 
         default:

@@ -7,6 +7,7 @@ import Itineraries from './components/Itineraries';
 import Activities from "./components/Activities";
 import Login from './components/Login';
 import CreateAccount from './components/CreateAccount';
+import Test from './components/Test';
 
 function App() {
   return (

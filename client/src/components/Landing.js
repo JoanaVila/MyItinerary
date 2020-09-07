@@ -50,15 +50,15 @@ class Landing extends Component {
                     <div style= {{display: "flex"}}>  
                     <div
                             className="d-block w-50"
-                            style={{backgroundImage:`url(${cityArray[0]})`, backgroundSize: "cover"}} 
+                            style={{backgroundImage: `url(${cityArray[0]})`, backgroundSize: "cover"}} 
                         >
-                            <h6 style = {{backgroundColor: "black", color: "white", alignItems: "center"}}>{cityName[0]}</h6>
+                            <h6 style = {{backgroundColor: "black", fontFamily: "Stencil Std, fantasy", paddingTop: 50, fontSize: 35, color: "white", height: 150, alignItems: "center"}}>{cityName[0]}</h6>
                     </div>
                     <div
                             className="d-block w-50"
                             style={{backgroundImage:`url(${cityArray[1]})`, backgroundSize: "cover"}} 
                         >
-                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[1]}</h6>
+                            <h6 style = {{fontFamily: "Stencil Std, fantasy", paddingTop: 50, fontSize: 35, color: "black", height: 150, alignItems: "center"}}>{cityName[1]}</h6>
                     </div>
                     </div>
                     <div style= {{display: "flex"}}>
@@ -66,13 +66,13 @@ class Landing extends Component {
                             className="d-block w-50"
                             style={{backgroundImage:`url(${cityArray[2]})`, backgroundSize: "cover"}} 
                         >
-                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[2]}</h6>
+                            <h6 style = {{fontFamily: "Stencil Std, fantasy", paddingTop: 50, fontSize: 35, color: "black", height: 150, alignItems: "center"}}>{cityName[2]}</h6>
                     </div>
                     <div
                             className="d-block w-50"
                             style={{backgroundImage:`url(${cityArray[3]})`, backgroundSize: "cover"}} 
                         >
-                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[3]}</h6>
+                            <h6 style = {{fontFamily: "Stencil Std, fantasy", paddingTop: 50, fontSize: 35, color: "black", height: 150, alignItems: "center"}}>{cityName[3]}</h6>
                     </div>
                     </div>
                     </CarouselItem>
@@ -82,13 +82,13 @@ class Landing extends Component {
                             className="d-block w-50"
                             style={{backgroundImage:`url(${cityArray[4]})`, backgroundSize: "cover"}} 
                         >
-                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[4]}</h6>
+                            <h6 style = {{fontFamily: "Stencil Std, fantasy", paddingTop: 50, fontSize: 35, color: "black", height: 150, alignItems: "center"}}>{cityName[4]}</h6>
                     </div>
                     <div
                             className="d-block w-50"
                             style={{backgroundImage:`url(${cityArray[5]})`, backgroundSize: "cover"}} 
                         >
-                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[5]}</h6>
+                            <h6 style = {{fontFamily: "Stencil Std, fantasy", paddingTop: 50, fontSize: 35, color: "black", height: 150, alignItems: "center"}}>{cityName[5]}</h6>
                     </div>
                     </div>
                     <div style= {{display: "flex"}}>
@@ -96,13 +96,13 @@ class Landing extends Component {
                             className="d-block w-50"
                             style={{backgroundImage:`url(${cityArray[6]})`, backgroundSize: "cover"}} 
                         >
-                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[6]}</h6>
+                            <h6 style = {{fontFamily: "Stencil Std, fantasy", paddingTop: 50, fontSize: 35, color: "black", height: 150, alignItems: "center"}}>{cityName[6]}</h6>
                     </div>
                     <div
                             className="d-block w-50"
                             style={{backgroundImage:`url(${cityArray[7]})`, backgroundSize: "cover"}} 
                         >
-                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[7]}</h6>
+                            <h6 style = {{fontFamily: "Stencil Std, fantasy", paddingTop: 50, fontSize: 35, color: "black", height: 150, alignItems: "center"}}>{cityName[7]}</h6>
                     </div>
                     </div>
                     </CarouselItem>
@@ -112,13 +112,13 @@ class Landing extends Component {
                             className="d-block w-50"
                             style={{backgroundImage:`url(${cityArray[8]})`, backgroundSize: "cover"}} 
                         >
-                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[8]}</h6>
+                            <h6 style = {{fontFamily: "Stencil Std, fantasy", paddingTop: 50, fontSize: 35, color: "black", height: 150, alignItems: "center"}}>{cityName[8]}</h6>
                     </div>
                     <div
                             className="d-block w-50"
                             style={{backgroundImage:`url(${cityArray[9]})`, backgroundSize: "cover"}} 
                         >
-                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[9]}</h6>
+                            <h6 style = {{fontFamily: "Stencil Std, fantasy", paddingTop: 50, fontSize: 35, color: "black", height: 150, alignItems: "center"}}>{cityName[9]}</h6>
                     </div>
                     </div>
                     <div style= {{display: "flex"}}>
@@ -126,13 +126,13 @@ class Landing extends Component {
                             className="d-block w-50"
                             style={{backgroundImage:`url(${cityArray[10]})`, backgroundSize: "cover"}} 
                         >
-                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[10]}</h6>
+                            <h6 style = {{fontFamily: "Stencil Std, fantasy", paddingTop: 50, fontSize: 35, color: "black", height: 150, alignItems: "center"}}>{cityName[10]}</h6>
                     </div>
                     <div
                             className="d-block w-50"
                             style={{backgroundImage:`url(${cityArray[11]})`, backgroundSize: "cover"}} 
                         >
-                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[11]}</h6>
+                            <h6 style = {{fontFamily: "Stencil Std, fantasy", paddingTop: 50, fontSize: 35, color: "black", height: 150, alignItems: "center"}}>{cityName[11]}</h6>
                     </div>
                     </div>
                     </CarouselItem>
@@ -142,13 +142,13 @@ class Landing extends Component {
                             className="d-block w-50"
                             style={{backgroundImage:`url(${cityArray[12]})`, backgroundSize: "cover"}} 
                         >
-                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[12]}</h6>
+                            <h6 style = {{fontFamily: "Stencil Std, fantasy", paddingTop: 50, fontSize: 35, color: "black", height: 150, alignItems: "center"}}>{cityName[12]}</h6>
                     </div>
                     <div
                             className="d-block w-50"
                             style={{backgroundImage:`url(${cityArray[13]})`, backgroundSize: "cover"}} 
                         >
-                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[13]}</h6>
+                            <h6 style = {{fontFamily: "Stencil Std, fantasy", paddingTop: 50, fontSize: 35, color: "black", height: 150, alignItems: "center"}}>{cityName[13]}</h6>
                         </div>
                     </div>
                     <div style= {{display: "flex"}}>
@@ -156,7 +156,7 @@ class Landing extends Component {
                             className="d-block w-50"
                             style={{backgroundImage:`url(${cityArray[14]})`, backgroundSize: "cover"}} 
                         >
-                            <h6 style = {{color: "white", height: 150, alignItems: "center"}}>{cityName[14]}</h6>
+                            <h6 style = {{fontFamily: "Stencil Std, fantasy", paddingTop: 50, fontSize: 35, color: "black", height: 150, alignItems: "center"}}>{cityName[14]}</h6>
                         </div>
                     </div>
                     </CarouselItem>

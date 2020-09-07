@@ -1,5 +1,5 @@
 import axios from "axios";
-import { LOGIN_SUCCESS, USER_LOADER, SET_CURRENT_USER, LOGOUT_SUCCESS} from "../actions/types";
+import { LOGIN_SUCCESS, USER_LOADER, SET_CURRENT_USER, LOGOUT} from "../actions/types";
 import jwt_decode from "jwt-decode";
 
 export const login = (body) => async dispatch => {
@@ -59,8 +59,9 @@ export const authGoogle = token => {
   };
 
   export const logout = () => dispatch => {
+    console.log("logout test")
     dispatch({
-      Type: LOGOUT_SUCCESS,
+      type: LOGOUT,
     })
   };
         

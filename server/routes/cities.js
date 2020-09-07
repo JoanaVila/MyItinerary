@@ -14,6 +14,10 @@ router.get("/all", async (req, res) => {
 
 })
 
+router.get("/test", (req, res) => {
+    res.send{"test rout working"}
+})
+
 router.post(
     "/add",
     async (req, res) => {
